@@ -25,16 +25,16 @@ export class UserListComponent implements OnInit {
     });
   }
 
-  userDetails(user_id: number){
-    this.router.navigate(['user-details', user_id]);
+  userDetails(id: number){
+    this.router.navigate(['user-details', id]);
   }
 
-  updateUser(user_id: number){
-    this.router.navigate(['update-user', user_id]);
+  updateUser(id: number){
+    this.router.navigate(['update-user', id]);
   }
 
-  deleteUser(user_id: number){
-    this.userService.deleteUser(user_id).subscribe( data => {
+  deleteUser(id: number){
+    this.userService.deleteUser(id).subscribe( data => {
       console.log(data);
       this.getUsers();
     })
