@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/editImageObject"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginBottom="2dp"
+        android:layout_centerHorizontal="true"
+        android:layout_above="@id/editNameObject"
+        app:srcCompat="@drawable/ic_launcher_background"
+        tools:ignore="VectorDrawableCompat" />
+
+    <EditText
+        android:id="@+id/editNameObject"
+        android:layout_width="wrap_content"
+        android:layout_height="70dp"
+        android:hint="Nom de l'objet"
+        android:inputType="text"
+        android:textColorHint="@color/purple_500"
+        android:fontFamily="sans-serif-condensed-light"
+        android:layout_centerVertical="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="17dp"
+        android:layout_above="@id/editDescriptionObject"
+        android:background="@drawable/bouton_passer"
+        android:layout_margin="5dp"
+        android:padding="5dp"
+        android:ems="10" />
+
+    <EditText
+        android:id="@+id/editDescriptionObject"
+        android:layout_width="wrap_content"
+        android:layout_height="75dp"
+        android:hint="Description de l'objet"
+        android:inputType="textMultiLine"
+        android:fontFamily="sans-serif-condensed-light"
+        android:layout_centerVertical="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:background="@drawable/bouton_passer"
+        android:layout_margin="5dp"
+        android:padding="5dp"
+        android:textColorHint="@color/purple_500"
+        android:ems="10" />
+
+    <Button
+        android:id="@+id/btnUpdate"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:background="@drawable/bouton_passer"
+        android:layout_margin="10dp"
+        android:padding="5dp"
+        android:textAllCaps="false"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:textSize="20sp"
+        android:textColor="@color/purple_500"
+        android:text="Modifier"
+        android:layout_centerVertical="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/editDescriptionObject"
+        />
+
+</RelativeLayout>

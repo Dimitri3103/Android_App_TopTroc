@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/beige"
+        app:layout_constraintDimensionRatio="2:1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/margin_start_percentage"
+            android:layout_width="1dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.05" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/margin_end_percentage"
+            android:layout_width="1dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.95" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/margin_top_percentage"
+            android:layout_width="1dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.25" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gl_image_bottom"
+            android:layout_width="1dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.659136546184739" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gl_text_bottom"
+            android:layout_width="1dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.840863453815261" />
+
+        <ImageView
+            android:id="@+id/iv_dashboardHeader_profilePicture"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:contentDescription="Profile Image"
+            android:src="@drawable/ic_launcher_background"
+            app:layout_constraintBottom_toBottomOf="@id/gl_image_bottom"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintStart_toStartOf="@id/margin_start_percentage"
+            app:layout_constraintTop_toTopOf="@id/margin_top_percentage" />
+
+        <TextView
+            android:id="@+id/tvEmailUtilisateur"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="96dp"
+            android:layout_marginBottom="92dp"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:gravity="center_vertical"
+            android:maxLines="2"
+            android:textColor="@color/purple_500"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@id/gl_text_bottom"
+            app:layout_constraintStart_toStartOf="@id/margin_start_percentage"
+            tools:text="Email Utilisateur" />
+
+        <ImageView
+            android:id="@+id/iv_logout"
+            android:onClick="Logout"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginEnd="8dp"
+            android:contentDescription="Logout Image"
+            android:src="@drawable/logout"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toStartOf="@id/tv_logout"
+            app:layout_constraintTop_toTopOf="@id/tv_logout"
+            app:layout_constraintBottom_toBottomOf="@id/tv_logout"
+            />
+
+        <TextView
+            android:id="@+id/tv_logout"
+            android:onClick="Logout"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:ellipsize="end"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:gravity="center"
+            android:maxLines="1"
+            android:text="Déconnexion"
+            android:textColor="@color/purple_500"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toBottomOf="@id/gl_text_bottom"
+            app:layout_constraintEnd_toEndOf="@id/margin_end_percentage" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabLayoutProfile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/constraintLayout"
+        >
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/itemObjects"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Mes objets"
+            />
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/itemParameters"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Paramètres" />
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/itemInformations"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Infos du compte" />
+    </com.google.android.material.tabs.TabLayout>
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/viewPagerProfile"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tabLayoutProfile"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

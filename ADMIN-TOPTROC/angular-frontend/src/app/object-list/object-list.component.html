@@ -1,0 +1,23 @@
+<h2> Object List</h2>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th> Name</th>
+            <th> Description </th>
+            <th> Image </th>
+            <th> Actions </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let object of objects">
+            <td> {{ object.name }} </td>
+            <td> {{ object.description }} </td>
+            <td> {{ object.image }} </td>
+            <td>
+
+                <button (click)="deleteObject(object.id)" class="btn btn-danger" style="margin-left: 10px"> Delete </button>
+                <button (click)="objectDetails(object.id)" class="btn btn-info" style="margin-left: 10px"> View </button>
+            </td>
+        </tr>
+    </tbody>
+</table>
